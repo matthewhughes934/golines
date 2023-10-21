@@ -3,7 +3,7 @@ module github.com/segmentio/golines
 go 1.18
 
 require (
-	github.com/dave/dst v0.27.0
+	github.com/dave/dst v0.27.3
 	github.com/dave/jennifer v1.5.0
 	github.com/fatih/structtag v1.2.0
 	github.com/golangci/golangci-lint v1.54.2
