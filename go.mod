@@ -1,4 +1,4 @@
-module github.com/segmentio/golines
+module github.com/matthewhughes934/golines
 
 go 1.18
 

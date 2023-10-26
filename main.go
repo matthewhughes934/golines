@@ -10,7 +10,7 @@ import (
 	"runtime/pprof"
 	"strings"
 
-	"github.com/segmentio/golines/internal"
+	"github.com/matthewhughes934/golines/internal"
 	log "github.com/sirupsen/logrus"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
