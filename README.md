@@ -1,7 +1,7 @@
-[![Circle CI](https://circleci.com/gh/segmentio/golines.svg?style=svg&circle-token=b1d01d8b035ef0aa71ccd183580586a80cd85271)](https://circleci.com/gh/segmentio/golines)
-[![Go Report Card](https://goreportcard.com/badge/github.com/segmentio/golines)](https://goreportcard.com/report/github.com/segmentio/golines)
-[![GoDoc](https://godoc.org/github.com/segmentio/golines?status.svg)](https://godoc.org/github.com/segmentio/golines)
-[![Coverage](https://img.shields.io/badge/Go%20Coverage-84%25-brightgreen.svg?longCache=true&style=flat)](https://gocover.io/github.com/segmentio/golines?version=1.13.x)
+[![Pipeline
+Statues](https://github.com/matthewhughes934/golines/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/matthewhughes934/golines/actions?query=branch%3Amain)
+[![Go Report Card](https://goreportcard.com/badge/github.com/matthewhughes934/golines)](https://goreportcard.com/report/github.com/matthewhughes934/golines)
+[![GoDoc](https://godoc.org/github.com/matthewhughes934/golines?status.svg)](https://godoc.org/github.com/matthewhughes934/golines)
 
 # golines
 
@@ -60,13 +60,13 @@ release.
 First, install the tool. If you're using golang 1.18 or newer, run:
 
 ```
-go install github.com/segmentio/golines@latest
+go install github.com/matthewhughes934/golines@latest
 ```
 
 Otherwise, for older golang versions, run:
 
 ```
-go install github.com/segmentio/golines@v0.9.0
+go install github.com/matthewhughes934/golines@v0.9.0
 ```
 
 Then, run:
