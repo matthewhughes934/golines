@@ -16,10 +16,6 @@ import (
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 )
 
-const (
-	versionStr = "0.11.0"
-)
-
 var (
 	// Flags
 	baseFormatterCmd = kingpin.Flag(
@@ -88,7 +84,7 @@ func main() {
 	}
 
 	if *version {
-		fmt.Printf("golines v%s\n", versionStr)
+		fmt.Printf("golines v%s\n", internal.Version())
 		return
 	}
 
