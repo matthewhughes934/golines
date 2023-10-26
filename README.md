@@ -5,6 +5,9 @@
 
 # golines
 
+**Note:** This is a fork of <https://github.com/segmentio/golines/> at
+[`d7d11e6ae11721865229b1d55b8862c8bd4ca719`](https://github.com/segmentio/golines/commit/d7d11e6ae11721865229b1d55b8862c8bd4ca719)
+
 Golines is a golang formatter that shortens long lines, in addition to all
 of the formatting fixes done by [`gofmt`](https://golang.org/cmd/gofmt/).
 
