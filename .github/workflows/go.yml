@@ -37,7 +37,7 @@ jobs:
           # rely on golangci/golangci-lint-action for caching
           cache: false
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v6
   pre-commit:
     runs-on: ubuntu-latest
     steps:
