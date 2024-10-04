@@ -24,7 +24,7 @@ linters:
     - revive
     - misspell
     - nakedret
-    - gas
+    - gosec
     - unconvert
     - unparam
     - prealloc
