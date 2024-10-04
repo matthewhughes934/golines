@@ -20,7 +20,7 @@ jobs:
         go: ["1.20", "1.21"]
     name: golines test (using go ${{ matrix.go }} on ${{ matrix.os }})
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: test golines
         uses: actions/setup-go@v5        
         with:
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: setup go
         uses: actions/setup-go@v5
         with:
@@ -41,7 +41,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # pre-commit needs tags for the current repo
           fetch-depth: 0
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # we need tags to check generated version
           fetch-depth: 0
