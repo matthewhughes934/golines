@@ -47,7 +47,7 @@ jobs:
           # pre-commit needs tags for the current repo
           fetch-depth: 0
           fetch-tags: true
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
       - uses: pre-commit/action@v3.0.0
         env:
           # run this separately since it handles it's own caching
