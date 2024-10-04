@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"path/filepath"
 	"runtime/pprof"
@@ -124,7 +124,7 @@ func run() error {
 
 	if len(*paths) == 0 {
 		// Read input from stdin
-		contents, err := ioutil.ReadAll(os.Stdin)
+		contents, err := io.ReadAll(os.Stdin)
 		if err != nil {
 			return err
 		}
@@ -207,7 +207,7 @@ func processFile(shortener *internal.Shortener, path string) ([]byte, []byte, er
 
 	log.Debugf("Processing file %s", path)
 
-	contents, err := ioutil.ReadFile(path)
+	contents, err := os.ReadFile(path)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -245,7 +245,7 @@ func handleOutput(path string, contents []byte, result []byte) error {
 			return nil
 		} else {
 			log.Debugf("Contents changed, writing output to %s", path)
-			return ioutil.WriteFile(path, result, info.Mode())
+			return os.WriteFile(path, result, info.Mode())
 		}
 	} else {
 		fmt.Print(string(result))

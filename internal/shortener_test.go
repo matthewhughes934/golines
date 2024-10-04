@@ -1,7 +1,6 @@
 package internal
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -25,7 +24,7 @@ func init() {
 // directory. To update the expected outputs, run tests with the REGENERATE_TEST_OUTPUTS
 // environment variable set to "true".
 func TestShortener(t *testing.T) {
-	info, err := ioutil.ReadDir(testdataDir)
+	info, err := os.ReadDir(testdataDir)
 	assert.Nil(t, err)
 
 	fixturePaths := []string{}
@@ -45,7 +44,7 @@ func TestShortener(t *testing.T) {
 		)
 	}
 
-	dotDir, err := ioutil.TempDir("", "dot")
+	dotDir, err := os.MkdirTemp("", "dot")
 	if err != nil {
 		t.Fatalf("Error creating output directory for dot files: %+v", err)
 	}
@@ -66,7 +65,7 @@ func TestShortener(t *testing.T) {
 	)
 
 	for _, fixturePath := range fixturePaths {
-		contents, err := ioutil.ReadFile(fixturePath)
+		contents, err := os.ReadFile(fixturePath)
 		if err != nil {
 			t.Fatalf(
 				"Unexpected error reading fixture %s: %+v",
@@ -81,7 +80,7 @@ func TestShortener(t *testing.T) {
 		expectedPath := fixturePath[0:len(fixturePath)-3] + "__exp" + ".go"
 
 		if os.Getenv("REGENERATE_TEST_OUTPUTS") == "true" {
-			err := ioutil.WriteFile(expectedPath, shortenedContents, 0o600)
+			err := os.WriteFile(expectedPath, shortenedContents, 0o600)
 			if err != nil {
 				t.Fatalf(
 					"Unexpected error writing output file %s: %+v",
@@ -91,7 +90,7 @@ func TestShortener(t *testing.T) {
 			}
 		}
 
-		expectedContents, err := ioutil.ReadFile(expectedPath)
+		expectedContents, err := os.ReadFile(expectedPath)
 		if err != nil {
 			t.Fatalf(
 				"Unexpected error reading expected file %s: %+v",
