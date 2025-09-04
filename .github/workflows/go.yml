@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: test golines
-        uses: actions/setup-go@v5        
+        uses: actions/setup-go@v6        
         with:
           go-version: ${{ matrix.go }}
       - run: make test
@@ -32,7 +32,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: setup go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           # rely on golangci/golangci-lint-action for caching
           cache: false
@@ -60,7 +60,7 @@ jobs:
           # we need tags to check generated version
           fetch-depth: 0
       - name: setup go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
       - name: generate code
         run: go generate ./...
       - name: check for changes in generated code
